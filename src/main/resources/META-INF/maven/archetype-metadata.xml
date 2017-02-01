@@ -1,0 +1,45 @@
+<archetype-descriptor name="basic">
+	<requiredProperties>
+		<requiredProperty key="useMysql">
+			<defaultValue>true</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="useSelenium">
+			<defaultValue>false</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="useJsoup">
+			<defaultValue>false</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="useLombok">
+			<defaultValue>true</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="useGhostMe">
+			<defaultValue>true</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="useInutils">
+			<defaultValue>true</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+
+	<fileSets>
+		<fileSet filtered="true">
+            <directory/>
+			<includes>
+				<include>LICENSE</include>
+				<include>.gitignore</include>
+				<include>.travis.yml</include>
+				<include>README.md</include>
+			</includes>
+			<!--excludes> <exclude>**/*.xml</exclude> </excludes -->
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true">
+			<directory>src/main/java</directory>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/resources</directory>
+		</fileSet>
+		<fileSet filtered="true" packaged="true">
+			<directory>src/test/java</directory>
+		</fileSet>
+	</fileSets>
+</archetype-descriptor>

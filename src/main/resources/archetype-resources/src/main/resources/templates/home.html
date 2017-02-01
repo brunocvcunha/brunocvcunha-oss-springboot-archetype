@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="/fragments/head :: head">
+</head>
+<body ng-app="PostsApp" ng-controller="SubscriptionController as vm">
+
+	<div class="content">
+		<img src="images/logo.png" alt="Logo" class="logo" />
+
+		<div class="content-triangle"></div>
+		<h2 class="content-header">Gerenciador de Posts</h2>
+		<div sec:authorize="isAuthenticated()" class="content-container">
+
+			<div sec:authorize="${hasAnyAuthority('PUBLISHER', 'ADMIN')}">
+				<p>Clique na assinatura que deseja postar:</p>
+				<p>&nbsp;</p>
+				<p ng-repeat="subscription in vm.subscriptions">
+					<a href="/publisher/browse?subscription={{subscription.id}}">{{subscription.page.name}} - {{subscription.quantity}} Post - {{subscription.value | currency : "R$"}}</a>
+				</p>
+			</div>
+
+
+		</div>
+		<form method="get" th:action="@{/pay}">
+			<input type="submit" value="Efetuar Assinatura" />
+		</form>
+		
+		<form action="/logout" method="post" ng-if="isAnySubscription">
+			<input type="submit" value="Sair" />
+		</form>
+
+	</div>
+</body>
+</html>
+

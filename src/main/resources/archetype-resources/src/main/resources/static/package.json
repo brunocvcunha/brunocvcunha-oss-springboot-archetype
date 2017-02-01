@@ -1,0 +1,17 @@
+{
+  "name": "${artifactId}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Volpato",
+  "dependencies": {
+    "angular": "1.2.10",
+    "angular-ui-bootstrap": "^2.3.2",
+    "angularjs-datetime-picker": "^0.1.16",
+    "bootstrap": "3.3.7"
+  },
+  "devDependencies": {}
+}

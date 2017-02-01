@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:replace="/fragments/head :: head">
+</head>
+<body>
+
+	<div class="login">
+		<img src="images/logo.png" alt="Logo" class="logo"/>
+		<div class="login-triangle"></div>
+		<h2 class="login-header">Efetuar Login</h2>
+		<form th:action="@{/login}" method="post" class="login-container">
+			<p th:if="${param.error}">Nome de usuário ou senha inválidos.</p>
+			<p th:if="${param.logout}">Você foi deslogado.</p>
+			<p>
+				<input type="text" name="username" placeholder="Login" />
+			</p>
+			<p>
+				<input type="password" name="password" placeholder="Senha" />
+			</p>
+			<p>
+				<input type="submit" value="Entrar" />
+			</p>
+		</form>
+	</div>
+</body>
+</html>

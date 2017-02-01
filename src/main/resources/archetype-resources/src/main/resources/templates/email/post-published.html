@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<body>
+	<div>
+		<div>
+			<img src="cid:logo" />
+		</div>
+		<h1>Post foi publicado!</h1>
+		<p>
+			Oi <b th:text="${user.loginName}">Bruno</b>!
+		</p>
+		<p>
+			O post <b th:text="${post.text}">Bla</b> foi publicado. Cheque o conteúdo em anexo.
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<body>
+	<div>
+		<div>
+			<img src="cid:logoApp" />
+		</div>
+		<h1>Daily Digest</h1>
+		<p>
+			Hi <b th:text="${user.loginName}">Bruno</b>!
+		</p>
+		<p>There are journals that were published recently!</p>
+		<p>&nbsp;</p>
+		<ul>
+			<li th:each="journal: ${journals}">
+		        <b th:text="${journal.name}">Journal Name</b> - by <i th:text="${journal.publisher.name}">Publisher Name</i>
+			</li>
+		</ul>
+
+		<p>&nbsp;</p>
+		<p>You're receiving this email because you're registered at App.</p>
+	</div>
+</body>
+</html>

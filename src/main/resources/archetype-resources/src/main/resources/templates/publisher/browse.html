@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="/fragments/head :: head">
+</head>
+<body ng-app="PostsApp" ng-controller="BrowseController as vm">
+
+	<div class="content content-big">
+		<img src="/images/logo.png" alt="Logo" class="logo" />
+
+		<div class="content-triangle"></div>
+		<h2 class="content-header">Gerenciador de Posts</h2>
+		<div class="content-container">
+			<table>
+				<tr>
+					<td>
+						<form action="/publisher/publish">
+							<input type="submit" value="Agendar novo post" />
+						</form>
+					</td>
+					<td>
+						<form action="/">
+							<input type="submit" value="Voltar para lista de páginas" />
+						</form>
+					</td>
+				</tr>
+			</table>
+
+			<div ng-controller="getPosts">
+				<table>
+					<thead>
+						<tr>
+							<td>Texto</td>
+							<td>Publicador</td>
+							<td>Horário</td>
+							<td>Data Cadastro</td>
+							<td>Visualizar</td>
+							<td>Ação</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="post in postList">
+							<td>{{post.text}}</td>
+							<td>{{post.publisher.name}}</td>
+							<td>{{post.category.name}}</td>
+							<td>{{post.publishDate}}</td>
+							<td><img src="aaa.jpg" /></td>
+							<td><input type="button" value="Remover"
+								ng-click="delete(post.id)" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<form action="/logout" method="post">
+			<input type="submit" value="Sair" />
+		</form>
+	</div>
+
+
+</body>
+</html>
