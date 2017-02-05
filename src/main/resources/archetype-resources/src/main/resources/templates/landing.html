@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta charset="utf-8"/>
+	<title>Nice Application</title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta name="description" content="Taskerbox Control Panel" />
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Taskerbox</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Channels</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="text-center">
+			<h1>Welcome to the Nice App.</h1>
+		</div>
+
+		<div class="btn-group col-md-12">
+			<input id="search" type="search" class="form-control searchinput"
+				placeholder="Type a domain here..." value=""/>
+			<span
+                id="searchclear"
+                class="searchclear glyphicon glyphicon-remove-circle"></span>
+		</div>
+
+		<p>&nbsp;</p>
+
+		<div id="domains"></div>
+
+	</div>
+	<!-- /.container -->
+
+	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' src="js/bootstrap.min.js"></script>
+
+
+
+
+	<script type='text/javascript'>
+		/* function listData(data) {
+			console.info("data", data);
+
+			var dataStr = "";
+			dataStr = dataStr + "<strong>type</strong>: " + data.class
+					+ "<br/>";
+
+			$.each(data.data, function(id, val) {
+				dataStr = dataStr + "<strong>" + id + "</strong>: " + val
+						+ "<br/>";
+			});
+
+			return dataStr;
+		}
+
+		function createLabel(id, displayName) {
+			if (id == displayName) {
+				return id;
+			} else {
+				return id + " - " + displayName;
+			}
+		}
+
+		function createChannelPanel(channel) {
+			return $('<div class="channel_panel col-md-4">'
+					+ '  <div id="channel_'
+					+ channel.id
+					+ '" class="panel '
+					+ (channel.paused ? 'panel-danger' : 'panel-primary')
+					+ '">'
+					+ '    <div class="panel-heading">'
+					+ createLabel(channel.id, channel.displayName)
+					+ '</div>'
+					+ '    <div class="panel-body">'
+					+ (channel.paused ? '<a href="#" onclick="pause(this, false)">unpause</a>'
+							: '<a href="#" onclick="pause(this, true)">pause</a>')
+					+ '    <a href="#" onclick="force(this)">force</a>'
+					+ '    <br/>' + listData(channel) + '    </div>'
+					+ '  </div>' + '</div>');
+		}
+
+		$(document).ready(
+				function() {
+
+					$.ajax({
+						dataType : "json",
+						url : "/channels",
+						//data: data,
+						success : function(data) {
+
+							$.each(data, function(id, val) {
+
+								createChannelPanel(val).appendTo("#channels");
+
+							});
+
+						}
+					});
+
+					$('#filter').keyup(function() {
+
+						var rex = new RegExp($(this).val(), 'i');
+						$('.channel_panel').hide();
+						$('.channel_panel').filter(function() {
+							return rex.test($(this).text());
+						}).show();
+
+					});
+
+					$(".searchinput").keyup(
+							function() {
+								$(this).parent().find('.searchclear').toggle(
+										Boolean($(this).val()));
+							});
+					$(".searchclear").toggle(Boolean($(".searchinput").val()));
+					$(".searchclear").click(function() {
+						$(this).parent().find('.searchinput').val('').focus();
+						$(this).hide();
+					});
+
+				}); */
+	</script>
+
+</body>
+</html>
