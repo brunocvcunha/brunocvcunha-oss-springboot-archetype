@@ -1,11 +1,11 @@
-# Bruno's OSS Java Archetype
+# Bruno's OSS Spring Boot Archetype
 
 Quick way to start hacking! :)
 
 
 ```ssh
 mvn archetype:generate  -DarchetypeGroupId=org.brunocvcunha  \
-  -DarchetypeArtifactId=brunocvcunha-oss-java-archetype  \
+  -DarchetypeArtifactId=brunocvcunha-oss-springboot-archetype  \
   -DarchetypeVersion=1.0-SNAPSHOT  \
   -DgroupId=org.brunocvcunha.projectname  \
   -DartifactId=projectname \
@@ -14,5 +14,6 @@ mvn archetype:generate  -DarchetypeGroupId=org.brunocvcunha  \
   -DuseJsoup=true \
   -DuseGhostMe=true \
   -DuseInutils=true \
-  -DuseSelenium=true
+  -DuseSelenium=false \
+  -DuseMysql=true
 ```
